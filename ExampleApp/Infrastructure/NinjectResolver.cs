@@ -5,6 +5,7 @@ using Ninject.Web.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http.Dependencies;
 
@@ -37,7 +38,8 @@ namespace ExampleApp.Infrastructure
         }
         private void AddBindings(IKernel kernel)
         {
-            kernel.Bind<IRepository>().To<Repository>().InRequestScope();
+            kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
+            kernel.Bind<IContentNegotiator>().To<CustomNegotiator>();
         }
       
     }
