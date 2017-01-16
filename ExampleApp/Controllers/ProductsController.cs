@@ -25,11 +25,6 @@ namespace ExampleApp.Controllers
             repo.DeleteProduct(id);
             return new NoContentResult();
         }
-        [HttpGet]
-        [Route("api/products/noop")]
-        public IHttpActionResult NoOp()
-        {
-            return Ok();
-        }
+        
     }
 }
