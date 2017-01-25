@@ -8,9 +8,10 @@ using System.Web;
 
 namespace ExampleApp.Infrastructure
 {
-    public class CustomNegotiator : DefaultContentNegotiator
+    public class CustomNegotiator: DefaultContentNegotiator
     {
-        public override ContentNegotiationResult Negotiate(Type type,HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
+        public override ContentNegotiationResult Negotiate(Type type,
+        HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
         {
             if (request.Headers.UserAgent.Where(x => x.Product != null
             && x.Product.Name.ToLower().Equals("chrome")).Count() > 0)

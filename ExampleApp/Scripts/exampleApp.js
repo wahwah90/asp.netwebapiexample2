@@ -7,8 +7,7 @@
             }
         })
     };
-
-    getProducts = function () {
+    getProducts = function() {
         $.ajax("/api/products", {
             success: function (data) {
                 products.removeAll();

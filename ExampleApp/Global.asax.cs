@@ -8,17 +8,17 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 
-namespace ExampleApp
-{
-    public class Global : HttpApplication
-    {
-        void Application_Start(object sender, EventArgs e)
-        {
-            // Code that runs on application startup
+namespace ExampleApp {
+    public class Global : HttpApplication {
+        void Application_Start(object sender, EventArgs e) {
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            System.Web.Mvc.DependencyResolver.SetResolver((System.Web.Mvc.IDependencyResolver)GlobalConfiguration.Configuration.DependencyResolver);
+
+            System.Web.Mvc.DependencyResolver.SetResolver(
+                (System.Web.Mvc.IDependencyResolver)
+                GlobalConfiguration.Configuration.DependencyResolver);
         }
     }
 }

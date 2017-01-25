@@ -16,5 +16,6 @@ namespace ExampleApp.Infrastructure
         {
             return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NoContent));
         }
+
     }
 }
